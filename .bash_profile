@@ -58,7 +58,7 @@ alias deleted="git ls-files --deleted"
 alias cached="git ls-files --cached"
 alias ignored="git ls-files -o -i --exclude-standard"
 alias addncommit="gaa;git commit -m"
-alias changedate="git commit --amend --date="
+alias amend="git commit --amend"
 #npm
 alias ni="npm install"
 alias ns="npm start"
