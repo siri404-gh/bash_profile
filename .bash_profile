@@ -10,6 +10,7 @@ alias gc="git checkout"
 alias gl="git log"
 alias gp="git pull"
 alias gs="git status"
+alias gshit="git reset --hard"
 alias gt="git log --decorate --oneline --graph"
 #npm
 alias ns="npm start"
