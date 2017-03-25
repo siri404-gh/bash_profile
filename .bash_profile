@@ -17,6 +17,9 @@ alias ip="ifconfig | grep inet | sort | grep netmask | grep broadcast | cut -d '
 #Git
 alias ga="git commit --amend --no-edit"
 alias gaa="git add --all"
+alias gceg="git config --edit --global"
+alias gce="git config --edit"
+alias gci="git config --global user.name 'Sreeram Padmanabhan' && git config --global user.email 'sreeram.com@gmail.com'"
 alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gcz="git cz"
