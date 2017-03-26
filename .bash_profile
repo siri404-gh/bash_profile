@@ -62,6 +62,7 @@ alias ns="npm start"
 alias nrd="npm run dev"
 alias nt="npm run test"
 #Vscode
-alias o="code"
+alias v="code"
+alias o="open"
 #paths
 alias work="cd ~/Dropbox/Works"
