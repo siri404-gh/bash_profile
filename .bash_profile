@@ -56,7 +56,7 @@ alias modified="git ls-files --modified"
 alias deleted="git ls-files --deleted"
 alias cached="git ls-files --cached"
 alias ignored="git ls-files -o -i --exclude-standard"
-alias juspushit="git add . && git commit -m 'updates' && git push"
+alias juspushit="gaa && git commit -m 'updates' && gp"
 #npm
 alias ni="npm install"
 alias ns="npm start"
