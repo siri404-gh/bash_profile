@@ -1,13 +1,14 @@
-#Android
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-export M2_HOME=~/apache-maven-3.0.5
-export ANT_HOME=~/apache-ant-1.9.7
-export JAVA_7_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
-export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
-export JAVA_HOME=${JAVA_7_HOME}
-export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${M2_HOME}/bin:${ANT_HOME}/bin:${JAVA_HOME}/bin
+echo 'Exporting PATH variables'
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export GRADLE_HOME=/Users/sreeram/tools/gradle-2.12/bin
+export MAVEN_HOME=/Users/sreeram/tools/maven
+export M2_HOME=/Users/sreeram/tools/maven
+export MAVEN_OPTS="-Xmx1024m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -XX:MaxPermSize=200m"
+export ANT_HOME=/usr/local/apache-ant-1.9.4
+export JMETER_HOME=/Users/sreeram/tools/apache-jmeter-2.9
+export PATH=$PATH:$MAVEN_HOME/bin:$M2_HOME/bin:$GRADLE_HOME:$MAVEN_OPTS:$ANT_HOME/bin:$JMETER_HOME/bin
 
+echo 'Exporting common aliases'
 #Common
 alias c="clear"
 alias count="ls | wc -l"
@@ -15,7 +16,19 @@ alias edit="vi ~/.bash_profile"
 alias src="source ~/.bash_profile"
 alias l="ls -la"
 alias ip="ifconfig | grep inet | sort | grep netmask | grep broadcast | cut -d ' ' -f2"
+alias tooling="~/ui-tooling/install -s"
 
+echo 'Exporting Gulp aliases'
+#Gulp
+alias gu="gulp"
+alias gub="gulp build"
+alias gubl="gub --local"
+alias gubll="gub --local --brand=lloyds"
+alias gublh="gub --local --brand=hfax"
+alias gublb="gub --local --brand=bos"
+alias gud="gulp dev"
+
+echo 'Exporting Git aliases'
 #Git
 alias gaa="git add --all"
 alias gan="git commit --amend --no-edit"
@@ -67,19 +80,27 @@ alias cached="git ls-files --cached"
 alias ignored="git ls-files -o -i --exclude-standard"
 alias addncommit="gaa;git commit -m"
 alias amend="git commit --amend"
+alias patch="git push origin HEAD:refs/for/develop"
 
+echo 'Exporting npm aliases'
 #npm
 alias ni="npm install"
 alias ns="npm start"
 alias nrd="npm run dev"
 alias nt="npm run test"
 
+echo 'Exporting v & o'
 #Vscode
 alias v="code"
 alias o="open"
 
+echo 'Exporting code paths'
 #paths
-alias work="cd ~/Dropbox/Works"
+alias ui="cd ~/Desktop/on-prem/client-web-application/ui"
+alias pf="cd ~/Desktop/on-prem/client-web-application/platform"
+alias se="cd ~/Desktop/on-prem/ib/statement-enhancements"
+alias sb="cd ~/Desktop/sandbox/servicing-statements-cwa"
+alias desktop="cd ~/Desktop"
 
 #Jenkins
 alias jstart="sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist"
@@ -87,3 +108,28 @@ alias jstop="sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist"
 alias jrestart="jstop && jstart"
 
 #Android emulator
+
+echo 'Exporting hook alias'
+alias hook="rm -f \$(git rev-parse --git-dir)/hooks/commit-msg; scp -p -P 29418 sreeram@digital-gerrit.service.test.group:hooks/commit-msg \$(git rev-parse --git-dir)/hooks/"
+alias setproxy="sudo networksetup -setautoproxyurl 'Thunderbolt Ethernet' 'http://proxyarray.service.group:8080/accelerated_pac_base.pac'"
+alias unsetproxy="sudo networksetup -setautoproxystate 'Thunderbolt Ethernet' off"
+
+
+# echo 'Installing hooks'
+# se
+# tooling
+# hook
+
+# ui
+# tooling
+# hook
+
+# pf
+# tooling
+# hook
+
+# be
+# tooling
+# hook
+
+# desktop
