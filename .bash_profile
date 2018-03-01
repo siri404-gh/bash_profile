@@ -67,6 +67,7 @@ alias cached="git ls-files --cached"
 alias ignored="git ls-files -o -i --exclude-standard"
 alias addncommit="gaa;git commit -m"
 alias amend="git commit --amend"
+alias commitcount="git shortlog | grep '):'"
 
 #npm
 alias ni="npm install"
